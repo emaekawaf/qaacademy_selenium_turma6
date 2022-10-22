@@ -24,10 +24,10 @@ public class DemoTest {
         driver.findElement(By.xpath("//*[@id=\"basicBootstrapForm\"]/div[4]/div/input")).sendKeys("1397072607");
         driver.findElement(By.xpath("//*[@id=\"basicBootstrapForm\"]/div[5]/div/label[2]/input")).click();
         driver.findElement(By.xpath("//*[@id=\"checkbox2\"]")).click();
-        Select selectSkills = new Select(driver.findElement(By.xpath("//*[@id=\"Skills\"]")));
+        Select selectSkills = new Select(driver.findElement(By.id("Skills")));
         selectSkills.selectByVisibleText("Java");
-//        Select selectCountry = new Select(driver.findElement(By.xpath("//*[@id=\"basicBootstrapForm\"]/div[10]/div/span/span[1]/span")));
-//        selectCountry.selectByVisibleText("Japan");
+        driver.findElement(By.xpath("//*[@id=\"basicBootstrapForm\"]/div[10]/div/span/span[1]/span")).click();
+        driver.findElement(By.xpath("//*[@id=\"select2-country-results\"]/li[7]")).click();
         Select selectYear = new Select(driver.findElement(By.xpath("//*[@id=\"yearbox\"]")));
         selectYear.selectByVisibleText("1994");
         Select selectMonth = new Select(driver.findElement(By.xpath("//*[@id=\"basicBootstrapForm\"]/div[11]/div[2]/select")));
