@@ -99,4 +99,16 @@ public class DemoTest {
         driver.switchTo().defaultContent();
     }
 
+    @Test
+    public void windowTest(){
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.get("https://demo.automationtesting.in/Windows.html");
+        driver.findElement(By.xpath("//*[@id=\"Tabbed\"]/a/button")).click();
+        Object[] janelas = driver.getWindowHandles().toArray();
+        driver.switchTo().window(janelas[1].toString());
+        String url = driver.getCurrentUrl();
+        Assert.assertEquals("https://www.selenium.dev/", url);
+    }
 }
